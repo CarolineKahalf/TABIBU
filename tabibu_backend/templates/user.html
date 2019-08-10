@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/css/styleHome.css">
+  <link rel="stylesheet" href="static/css/sidenav.css">
+  <link rel="stylesheet" href="static/css/cards.css">
+  <link rel="stylesheet" href="static/css/contact.css">
+  <link rel="stylesheet" href="static/css/tables&links.css">
+  <link rel="stylesheet" href="static/css/landing_page.css">
+  <link rel="stylesheet" href="static/css/chat.css">
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-image: url("static/images/patient.jpg");
+      height: 80%;
+      /* background-position: center; */
+      background-repeat: no-repeat;
+      background-size: cover;
+      color:rgb(110, 74, 74);
+    }
+  
+  </style>
+</head>
+
+
+<body>
+
+  <!--Side Navigation-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" onclick="switch_div('home')">Home</a>
+    <a href="#" onclick="switch_div('profile')">Profile</a>
+    <a href="#" onclick="switch_div('chats')">Chats</a>
+    <a href="#" onclick="switch_div('records')">Records</a>
+    <a href="#" onclick="switch_div('ambulance_service')">Ambulance Service</a>
+    <a href="#" onclick="switch_div('hospital_locator')">Hospital Locator</a>
+    <a href="#" onclick="switch_div('invoices')">Invoices</a>
+    <a href="#" onclick="switch_div('help')">Help</a>
+    <a href="#" onclick="switch_div('contact')">Contact Us</a>
+  </div>
+
+
+  <div id="header-box">
+    <span id="opennav_btn" style="font-size:30px; cursor:pointer; display:none;" onclick="openNav()">&#9776;</span>
+
+    <!--Profile Log In Picture-->
+    <span id="profile_photo_span"
+      style="float: right; border-radius: 50%; margin-right: 2%; margin-top: 1%; display:none;">
+      <img src="static/images/profile.png" alt="Profile" width="30" height="30" onclick="logout()">
+    </span>
+
+    <button id="login_btn" class="login_button" onclick="document.getElementById('id01').style.display='block'"
+      style="width:auto; float: right;">Login</button>
+
+    <button id="signup_btn" class="signup_button" onclick="document.getElementById('id02').style.display='block'"
+      style="width:auto; float: right;">Sign Up</button>
+
+    <!--Site Logo-->
+    <div style="text-align: center"><img onclick="switch_div('home')" src="static/images/editedname.jpg" width="200px"
+        height="60px" /></div>
+    <div style="text-align: center"><img onclick="switch_div('home')" src="static/images/logoresized.jpg" width="200px"
+        height="60px" /></div>
+  </div>
+  <div class="bg"></div>
+  <br><br><br><br><br><br><br><br>
+
+  <!--Landing Page-->
+  <div id="landing_page">
+    <h4 style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 40px; color:rgb(110, 74, 74);;">Welcome to TABIBU Online Medical Support</h4>
+    <br><br>
+    <h4 style="font-size: 25px;">What is TABIBU?</h4>
+    <p>TABIBU is an online treatment service that provides health services to people at the comfort of their homes. It
+      is developed as a remedy to the society's extensive medical problems. TABIBU promises to deliver in that, it
+      solves congestions in hospitals as patients can access trusted medical care from qualified doctors online without
+      necessarily visiting a hospital. Moreover, TABIBU attends to patients who are dire need of medical attention by
+      helping them access medical attention by requesting for an ambulance or inquiring about a medical solution to a
+      current process or even helping them locate the nearest hospital to them. TABIBU will be a promising, effective
+      and effcient application to the population of sick individuals once developed and fully implemented</p>
+    <br><br>
+
+    <h4>How to use Tabibu:</h4>
+    <ol>
+      <li>Visit our website</li>
+      <li>Create an account by providing your details</li>
+      <li>Set your default doctor</li>
+      <li>Set your default location</li>
+    </ol>
+    <br><br>
+
+    <h4>Our Services:</h4>
+    <ul>
+      <li>Requesting an ambulance</li>
+      <li>Doctor/Patient consultation</li>
+      <li>Locating the nearest hospital</li>
+      <li>Tracking medical records</li>
+
+    </ul>
+
+    <br><br>
+
+    <h4>Reach us:</h4>
+    <b>Tel:</b> <a href="tel:+254712345678">+254712345678</a><br>
+    <b>Email:</b> <a href="mailto:+info@tabibu.co.ke">info@tabibu.co.ke</a><br>
+    <b>P.O. Box:</b> 323-00303 Juja<br>
+    <b>Our offices:</b> C.K. Street, Juja<br>
+
+
+    <!--Log In Modal-->
+    <div id="id01" class="login_modal">
+
+      <form class="login_modal-content login_animate">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+        </div>
+
+        <div class="login_container">
+          <label for="uname"><b>Username</b></label>
+          <input id="login_username" type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input id='login_password' type="password" placeholder="Enter Password" name="psw" required>
+
+          <button class="login_button" id='login_submit' onclick="submit_login()" type="button">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="login_container" style="background-color:#f1f1f1">
+          <button type="button" id="login_cancelbtn" onclick="document.getElementById('id01').style.display='none'"
+            class="login_cancelbtn">Cancel</button>
+          <span class="login_psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--Sign Up Modal-->
+  <div id="id02" class="signup_modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="signup_close"
+      title="Close Modal">&times;</span>
+    <form class="signup_modal-content" onsubmit="signup_submit()" id="signup_form">
+      <div class="signup_container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Your Name" id="signup_name" name="username" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" id="signup_email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="signup_psw" name="password" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" id="signup_psw-repeat" name="signup_psw-repeat"
+          required><br>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a onclick="alert('Hakuna cha privacy hapa');" href="#"
+            style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="signup_clearfix">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'"
+            class="signup_cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn signup_button">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!--Home-->
+  <div id="home" style="display: none;">
+    <br><br>
+    <h3 style="font-size: 30px; ">HOME</h3>
+
+    <br><br><br>
+    <div class="row">
+      <div onclick="switch_div('chats')" class="column">
+        <div class="card">
+          <h3>Chat with a Doctor</h3>
+          <p><i>No default doctor saved!</i></p>
+          <p><i>Click to choose your doctor</i></p>
+        </div>
+      </div>
+
+      <div onclick="switch_div('records')" class="column">
+        <div class="card">
+          <h3>Medical History</h3>
+          <p><i><span id="number_of_records">0 records found</span></i></p>
+        </div>
+      </div>
+
+      <div onclick="switch_div('ambulance_service')" class="column">
+        <div class="card">
+          <h3>Order an Ambulance</h3>
+          <p><i>Is it an emergency?</i></p>
+          <p><i>Order an ambulance right now.</i></p>
+        </div>
+      </div>
+
+    </div>
+
+    <br><br><br>
+    <div class="row">
+      <div onclick="switch_div('hospital_locator')" class="column">
+        <div class="card">
+          <h3>Find a hospital</h3>
+          <p><i>Get directions to a hospital</i></p>
+          <p><i>in your current location</i></p>
+        </div>
+      </div>
+
+      <div onclick="switch_div('help')" class="column">
+        <div class="card">
+          <h3>Help</h3>
+          <p><i>Let's get it done</i></p>
+        </div>
+      </div>
+
+      <div onclick="switch_div('contact')" class="column">
+        <div class="card">
+          <h3>Contact Us</h3>
+          <p><i>Let us know your comments,</i></p>
+          <p><i>suggestions, questions or complaints</i></p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--Profile-->
+  <div id="profile" style="display: none;">
+    <h3>Profile</h3>
+
+    <br><br>
+    Name: <input type="text" value="Kiongozi Mkuu"><br>
+    Password: <input type="password" value="123456"><br>
+    Email: <input type="text" value="kingozi@gmail.com"><br>
+    Telephone: <input type="number" value="0738745822"><br><br>
+
+    Default Doctor:
+    <select name="default_doctor" id="default_doctor">
+      <option value="wanjau">Wanjau Kennedy</option>
+      <option value="murungaru">Murungaru Chris</option>
+      <option value="nanjala">Nanjala Cynthia</option>
+      <option value="salim">Salim Swaleh</option>
+    </select>
+    <br>
+    Default Location:
+    <select name="default_location" id="default_location">
+      <option value="juja">Juja</option>
+      <option value="rongai">Rongai</option>
+      <option value="pangani">Pangani</option>
+      <option value="thika">Thika</option>
+      <option value="embakasi">Embakasi</option>
+    </select>
+    <br>
+    Profile Picture: <input type="file" name="fileToUpload" id="fileToUpload"><br>
+
+
+  </div>
+
+  <!--Ambulance Services-->
+  <div id="ambulance_service" style="display: none;">
+    <h3>Ambulance Service</h3>
+
+    <br><br>
+    Current Location:
+    <select name="default_location" id="default_location">
+      <option value="juja">Juja</option>
+      <option value="rongai">Rongai</option>
+      <option value="pangani">Pangani</option>
+      <option value="thika">Thika</option>
+      <option value="embakasi">Embakasi</option>
+    </select>
+    <br>
+    <button class="login_button" style="width: 10%; background-color: red;">Order Now!</button><br><br>
+
+    Past Orders:
+    <table class="default_table" id="ambulance_table">
+      <thead>
+        <td>Date</td>
+        <td>Location</td>
+        <td>Hospital</td>
+      </thead>
+      <tbody id="ambulance_tbody">
+        <tr>
+          <td colspan="3">0 records found...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Chats-->
+  <div id="chats" style="display: none;">
+    <h3>Chat with a doctor</h3>
+
+    <br><br>
+    <!--List of all chats-->
+    <div id="overall_chats">
+      <button onclick="symptoms_display()">Start New...</button>
+
+      <br><br>
+      <h4>Previous chats:</h4>
+      <div id="previouschats">
+        <i>No previous chats found</i>
+      </div>
+    </div>
+
+    <!--A particular chat-->
+    <div id="inside_a_chat" style="display: none;">
+
+      <button onclick="back_to_threads()">Back</button><br>
+
+      <div id="thread_content">
+        <h5 id="chat_patner"></h5><br>
+        <div id="messages"></div>
+      </div>
+    </div>
+
+    <!--Post Symptoms-->
+    <div id="symptoms_board" style="display: none;">
+      <button onclick="back_to_threads()">Back</button><br>
+
+      <h4>Symptoms</h4>
+      <textarea id="Symptoms_textarea" name="Symptoms_textarea" placeholder="How are you feeling?"
+        style="height:300px; width: 50%;"></textarea>
+      <br>
+      <button onclick="submit_symptoms()">Submit</button>
+
+    </div>
+
+
+  </div>
+
+  <!--Medical Records-->
+  <div id="medical_records" style="display: none;">
+    <h3>Medical Records</h3>
+
+    <table class="default_table" id="records_table">
+      <thead>
+        <td>Date</td>
+        <td>Location</td>
+        <td>Doctor</td>
+        <td>Illness</td>
+        <td>Cost</td>
+        <td>Recommendation</td>
+      </thead>
+      <tbody id="records_tbody">
+        <tr>
+          <td colspan="6">0 records found...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Hospital Locator-->
+  <div class="default_table" id="hospital_locator" style="display: none;">
+    <h3>Hospital Locator</h3>
+
+    <table id="hospitals_table">
+      <thead>
+        <td>Name</td>
+        <td>Location</td>
+        <td>Directions</td>
+        <td>Contacts</td>
+        <td>Ratings</td>
+      </thead>
+      <tbody id="hospitals_tbody">
+        <tr>
+          <td colspan="5">0 records found...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Invoices-->
+  <div id="invoices" style="display: none;">
+    <h3>Invoices</h3>
+
+    <br><br>
+    <table class="default_table" id="invoice_table">
+      <thead>
+        <td>Invoice Number</td>
+        <td>Date</td>
+        <td>Doctor</td>
+        <td>Amount</td>
+      </thead>
+      <tbody id="invoice_tbody">
+        <tr>
+          <td colspan="4">0 records found...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Help-->
+  <div id="help" style="display: none;">
+    <h3>Help</h3>
+
+    <br><br>
+    <span>How to request an ambulance</span><br>
+    <span>How to chat with a doctor</span><br>
+    <span>How to upload a file</span><br>
+    <span>How to change my profile details</span><br>
+    <span>How to locate a hospital</span><br>
+    <span>How to access my medical records</span><br>
+  </div>
+
+  <!--Contact-->
+  <div id="contact" style="display: none;">
+    <h3>Contact</h3>
+    <div class="contact_container">
+
+      <form id="contact_us">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Kenya</option>
+          <option value="canada">Uganda</option>
+          <option value="usa">Tanzania</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" id="submit_contact" value="Submit">
+      </form>
+
+    </div>
+  </div>
+
+  <script src="static/javascript/ui.js"></script>
+  <script src="static/javascript/hospitals.js"></script>
+  <script src="static/javascript/ambulance.js"></script>
+  <script src="static/javascript/records.js"></script>
+  <script src="static/javascript/invoice.js"></script>
+  <script src="static/javascript/chats.js"></script>
+
+  <script>
+    let logged_in = false;
+
+    function submit_login() {
+      logged_in = true;
+      document.getElementById('login_cancelbtn').click();
+      switch_div('home');
+    }
+
+    function signup_submit() {
+      var mydata = {
+        username: document.getElementById('signup_name').value,
+        email: document.getElementById('signup_email').value,
+        password: document.getElementById('signup_psw').value,
+      }
+
+      fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(mydata)
+      })
+
+        .then(function (data) {
+          console.log('Request succeeded with JSON response', data);
+          document.getElementById('login_cancelbtn').click();
+          switch_div('home');
+        })
+        .catch(function (error) {
+          console.log('Request failed', error);
+        });
+    }
+
+    function fetch_invoice() {
+      var mydata = {
+        id: 1
+      }
+
+      fetch('http://127.0.0.1:5000/getinvoice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(mydata)
+      }).then((data) => {
+        console.log('Request succeeded with JSON response', data.json());
+        document.getElementById('login_cancelbtn').click();
+        switch_div('home');
+      })
+        .catch(function (error) {
+          console.log('Request failed', error);
+        });
+    }
+
+    function logout() {
+      switch_div('landing_page');
+      document.getElementById('home').style.display = 'none';
+      logged_in = false;
+    }
+  </script>
+
+</body>
+
+</html>

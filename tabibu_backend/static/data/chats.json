@@ -1,0 +1,37 @@
+[
+    {
+        "name":"Salim Swaleh",
+        "thread":[
+            {
+                "sender":"Salim Swaleh",
+                "time": "11.09",
+                "message":"Hi, I am Dr.Swaleh, how may I help you"
+            },
+            {
+                "sender":"me",
+                "time": "11.10",
+                "message":"You can't help me"
+            },
+            {
+                "sender":"Salim Swaleh",
+                "time": "11.11",
+                "message":"Give me a chance."
+            }
+        ]
+    },
+    {
+        "name":"Murungaru Chris",
+        "thread":[
+            {
+                "sender":"Murungaru Chris",
+                "time": "15.45",
+                "message":"Hi, I am Dr.Murungaru, at your service."
+            },
+            {
+                "sender":"me",
+                "time": "11.10",
+                "message":"Get out of here"
+            }
+        ]
+    }
+]
