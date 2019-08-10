@@ -1,0 +1,100 @@
+body{
+background:url(backbg.jpg);
+margin: 0%;
+padding: 0%;
+font-family: "Montserrat",sans-serif;
+}
+.container{
+    width: 360px;
+    height: 500px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    color:black;
+    text-align: center;
+}
+.container h1{
+    font-size: 40px;
+    margin: 100px;
+    margin-bottom: 50px;
+
+}
+.Tbox{ 
+width: 260px;
+height: 40px;
+background: rgb(83, 69, 69);
+border-radius: 10px;
+margin: 25px auto;
+}
+.Tbox input{
+    background: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 90%;
+    line-height: 37px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    color:white;
+}
+.btn{
+    width: 260px;
+    height: 40px;
+    background-color:blue;
+    border-radius: 10px;
+    margin: 14px auto;
+    display: block;
+    font-family: "Montserrat",sans-serif;
+    border: none;
+    color:white;
+    cursor: pointer;
+}
+.Tboxx{
+    width: 260px;
+    height: 40px;
+    background:blue;
+    border-radius: 10px;
+    margin: 25px auto;  
+}
+.b1{
+    display: block;
+    width: 200px;
+    bottom: 200px;
+    text-decoration: none;
+    color:purple;
+    text-align: center;
+    margin: -35px auto;
+    transition: 0.4s all;
+}
+.b2{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    padding: 0px 0;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.4s all;
+    color:purple;
+
+
+}
+a:hover{
+    background: rgba(165, 42, 42, 0.055);
+}
+.bg{
+    width: 360px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%); 
+}
+.container img{
+    top:-420px;
+    position: relative;
+     
+}
